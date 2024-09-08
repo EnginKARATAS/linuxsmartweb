@@ -3,9 +3,9 @@ const http = require("node:http");
 const hostname = "127.0.0.1";
 const port = 3000;
 
-const DBus = require("dbus"); // Adjust the path as necessary
+const DBus = require("dbus");  
 
-const bus = DBus.getBus("session"); // Use 'system' if your server is on the system bus
+const bus = DBus.getBus("session"); 
 
 const serviceName = "in.softprayog.add_server";
 const objectPath = "/in/softprayog/adder";
@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
         return;
       }
 
-      // Call the add_numbers method
+     
       iface.add_numbers("44 33", { timeout: 1000 }, (err, result) => {
         if (err) {
           console.error("Error calling method:", err);
